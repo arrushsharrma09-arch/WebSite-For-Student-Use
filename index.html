@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GANDHI MEMORIAL GOVT. S.B.V - School Companion Web Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{background:#e9f0ff;color:#222}
+.card{background:white;padding:20px;margin:15px 0;border-radius:12px;box-shadow:0 3px 12px rgba(0,0,0,.1)}
+.btn{background:#1a4ba3;color:white;padding:10px 18px;border-radius:8px;text-decoration:none;display:inline-block;cursor:pointer;margin-top:10px}
+header{background:linear-gradient(135deg,#1a4ba3,#133b82);color:white;text-align:center;padding:30px}
+nav{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;background:#133b82;padding:10px}
+nav a{color:white;text-decoration:none;font-weight:600;font-size:14px}
+section{padding:20px}
+#mainContent{display:none}
+#loginOverlay{
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.5);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+#loginBox{
+background:white;
+padding:25px;
+border-radius:15px;
+width:90%;max-width:360px;
+box-shadow:0 4px 20px rgba(0,0,0,0.2);
+text-align:center;
+}
+#loginBox input{
+width:100%;padding:10px;margin-top:10px;border:1px solid #ccc;border-radius:6px;
+}
+
+.btn:hover{background:#0f3a86; transform:scale(1.05);} 
+
+/* Mobile Fixes */
+@media(max-width:600px){
+  header{padding:40px 10px;}
+  header h1{font-size:20px;}
+  header p{font-size:14px;}
+
+  /* Profile Button Mobile Responsive */
+  header div[style*="position:absolute"] a{
+    padding:8px 14px !important;
+    font-size:13px !important;
+    gap:4px;
+    border-radius:8px;
+  }
+
+  nav a{
+    font-size:13px;
+    padding:6px 8px;
+  }
+
+  table{font-size:13px;}
+  table th, table td{padding:6px !important;}
+
+  #loginBox{width:92%;}
+}
+</style>
+</head>
+<body>
+
+<!-- LOGIN OVERLAY -->
+<div id="loginOverlay">
+  <div id="loginBox">
+    <h2>🔐 Student Login</h2>
+    <input id="roll" type="text" placeholder="Enter ID">
+    <input id="pass" type="password" placeholder="Enter Password">
+    <button class="btn" onclick="login()" style="width:100%;margin-top:15px;">Login</button>
+    <p style="margin-top:10px;font-size:14px;">Use ID: <b>GMSBV</b> & Password: <b>1105001</b></p>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="mainContent">
+
+<header>
+<img src="logo.png" width="110" />
+<h1>GANDHI MEMORIAL GOVT. S.B.V</h1>
+<p><strong>School Companion Web Portal</strong></p>
+<div style="position:absolute; top:20px; right:20px;">
+  <a href="student-profile.html" class="btn" style="padding:10px 18px; font-size:14px; display:flex; align-items:center; gap:6px; border-radius:10px; transition:0.2s;">
+  <span style="font-size:16px;">👤</span> Profile
+</a>
+</div>
+</header>
+
+<nav>
+<a href="#notices">Notices</a>
+<a href="#timetable">Timetable</a>
+<a href="#homework">Homework</a>
+<a href="#materials">Notebook</a>
+<a href="#gallery">School Pics</a>
+<a href="#teachers">Teachers</a>
+<a href="#contact">Contact Form</a>
+</nav>
+
+<section id="notices">
+<h2>📢 School Notices</h2>
+<div class="card">Make It Project For Student Use!</div>
+<div class="card">PTM → SOON!</div>
+<a class="btn">Download Full Notice PDF</a>
+</section>
+
+<section id="timetable">
+  <h2>📚 Class Timetable</h2>
+
+  <div class="table-wrapper" style="overflow-x:auto; margin-top:15px;">
+    <table style="width:100%; border-collapse:collapse; text-align:center; font-size:15px;">
+      <thead>
+        <tr style="background:#1a4ba3; color:white;">
+          <th style="padding:8px; border:1px solid #ddd;">Day</th>
+          <th style="padding:8px; border:1px solid #ddd;">1</th>
+          <th style="padding:8px; border:1px solid #ddd;">2</th>
+          <th style="padding:8px; border:1px solid #ddd;">3</th>
+          <th style="padding:8px; border:1px solid #ddd;">4</th>
+          <th style="padding:8px; border:1px solid #ddd;">5</th>
+          <th style="padding:8px; border:1px solid #ddd;">6</th>
+          <th style="padding:8px; border:1px solid #ddd;">7</th>
+          <th style="padding:8px; border:1px solid #ddd;">8</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td style="padding:8px; border:1px solid #ccc; background:#eef3ff;">Monday</td>
+          <td style="padding:8px; border:1px solid #ccc;">Maths</td>
+          <td style="padding:8px; border:1px solid #ccc;">Sanskrit</td>
+          <td style="padding:8px; border:1px solid #ccc;">Maths</td>
+          <td style="padding:8px; border:1px solid #ccc;">Sanskrit</td>
+          <td style="padding:8px; border:1px solid #ccc;">Science</td>
+          <td style="padding:8px; border:1px solid #ccc;">English</td>
+          <td style="padding:8px; border:1px solid #ccc;">S.S.T</td>
+          <td style="padding:8px; border:1px solid #ccc;">Hindi</td>
+        </tr>
+
+        <tr>
+          <td style="padding:8px; border:1px solid #ccc; background:#eef3ff;">Tuesday</td>
+          <td style="padding:8px; border:1px solid #ccc;">Maths</td>
+          <td style="padding:8px; border:1px solid #ccc;">Sanskrit</td>
+          <td style="padding:8px; border:1px solid #ccc;">Library</td>
+          <td style="padding:8px; border:1px solid #ccc;">Sanskrit</td>
+          <td style="padding:8px; border:1px solid #ccc;">Science</td>
+          <td style="padding:8px; border:1px solid #ccc;">English</td>
+          <td style="padding:8px; border:1px solid #ccc;">S.S.T</td>
+          <td style="padding:8px; border:1px solid #ccc;">Hindi</td>
+        </tr>
+
+        <tr>
+          <td style="padding:8px; border:1px solid #ccc; background:#eef3ff;">Wednesday</td>
+          <td style="padding:8px; border:1px solid #ccc;">Maths</td>
+          <td style="padding:8px; border:1px solid #ccc;">English</td>
+          <td style="padding:8px; border:1px solid #ccc;">Maths</td>
+          <td style="padding:8px; border:1px solid #ccc;">Sanskrit</td>
+          <td style="padding:8px; border:1px solid #ccc;">Science</td>
+          <td style="padding:8px; border:1px solid #ccc;">English</td>
+          <td style="padding:8px; border:1px solid #ccc;">S.S.T</td>
+          <td style="padding:8px; border:1px solid #ccc;">Hindi</td>
+        </tr>
+
+        <tr>
+          <td style="padding:8px; border:1px solid #ccc; background:#eef3ff;">Thursday</td>
+          <td style="padding:8px; border:1px solid #ccc;">Maths</td>
+          <td style="padding:8px; border:1px solid #ccc;">English</td>
+          <td style="padding:8px; border:1px solid #ccc;">I.T</td>
+          <td style="padding:8px; border:1px solid #ccc;">Sanskrit</td>
+          <td style="padding:8px; border:1px solid #ccc;">Science</td>
+          <td style="padding:8px; border:1px solid #ccc;">English</td>
+          <td style="padding:8px; border:1px solid #ccc;">S.S.T</td>
+          <td style="padding:8px; border:1px solid #ccc;">Hindi</td>
+        </tr>
+
+        <tr>
+          <td style="padding:8px; border:1px solid #ccc; background:#eef3ff;">Friday</td>
+          <td style="padding:8px; border:1px solid #ccc;">Maths</td>
+          <td style="padding:8px; border:1px solid #ccc;">S.S.T</td>
+          <td style="padding:8px; border:1px solid #ccc;">I.T</td>
+          <td style="padding:8px; border:1px solid #ccc;">Sanskrit</td>
+          <td style="padding:8px; border:1px solid #ccc;">Science</td>
+          <td style="padding:8px; border:1px solid #ccc;">English</td>
+          <td style="padding:8px; border:1px solid #ccc;">S.S.T</td>
+          <td style="padding:8px; border:1px solid #ccc;">Hindi</td>
+        </tr>
+
+        <tr>
+          <td style="padding:8px; border:1px solid #ccc; background:#eef3ff;">Saturday</td>
+          <td style="padding:8px; border:1px solid #ccc;">Maths</td>
+          <td style="padding:8px; border:1px solid #ccc;">S.S.T</td>
+          <td style="padding:8px; border:1px solid #ccc;">I.T</td>
+          <td style="padding:8px; border:1px solid #ccc;">Sanskrit</td>
+          <td style="padding:8px; border:1px solid #ccc;">Science</td>
+          <td style="padding:8px; border:1px solid #ccc;">English</td>
+          <td style="padding:8px; border:1px solid #ccc;">S.S.T</td>
+          <td style="padding:8px; border:1px solid #ccc;">Hindi</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <a class="btn" href="https://www.mediafire.com/file/sumu0f4c3y0zhfx/Remedial+Classes+Time+Table+2025.pdf/file" style="margin-top:15px; display:inline-block;">Download Timetable PDF</a>
+</section>
+
+<section id="homework">
+<h2>📘 Homework</h2>
+<div class="card">Maths – Chapter 5 Exercise 5.3</div>
+<div class="card">Science – Read Chapter 8</div>
+</section>
+
+<section id="materials">
+<h2>📔 Notebook Work</h2>
+<div class="card">IT 9th Class – All Units</div>
+<a class="btn" href="https://www.mediafire.com/file/kvztz780xj0ur4l/9th+class+it.pdf/file">Download Notes</a>
+</section>
+
+<section id="gallery">
+<h2>🖼 School Pics</h2>
+<div class="card"><img src="school1.jpg" width="100%"></div>
+<div class="card"><img src="school2.jpg" width="100%"></div>
+</section>
+
+<section id="teachers">
+<h2>👨‍🏫 Teachers</h2>
+      <div class="card">Pradeep Rana – Maths</div>
+      <div class="card">Bholanath Pandey – Sanskrit</div>
+      <div class="card">Madhur Gupta – IT</div>
+      <div class="card">Vaishnavi Sharma – Science</div>
+      <div class="card">Seema Gupta – English</div>
+      <div class="card">Abhishek Tripathi – Social Science</div>
+      <div class="card">Indramani Chaurasiya – Hindi</div>
+</section>
+
+<section id="contact">
+<h2>✉ Contact Form</h2>
+<div class="card" style="padding:25px; border-radius:15px; box-shadow:0 4px 15px rgba(0,0,0,0.1); background:white;">
+  <form style="display:flex; flex-direction:column; gap:15px;">
+
+    <input type="text" placeholder="Your Name" required 
+      style="padding:12px; border-radius:8px; border:1px solid #bbb; font-size:15px;">
+
+    <input type="email" placeholder="Your Email" required 
+      style="padding:12px; border-radius:8px; border:1px solid #bbb; font-size:15px;">
+
+    <textarea rows="4" placeholder="Your Message" required 
+      style="padding:12px; border-radius:8px; border:1px solid #bbb; font-size:15px; resize:none;"></textarea>
+
+    <button class="btn" type="submit" 
+      style="padding:12px; font-size:16px; font-weight:600; border-radius:10px; background:#1a4ba3; color:white;">
+      Send Message
+    </button>
+
+  </form>
+</div>
+</section>
+
+<footer style="text-align:center;padding:20px;background:#1a4ba3;color:white;">© 2025 G.M.G.S.B.V | Student Project</footer>
+
+</div>
+
+<script>
+// --- AUTO LOGIN CHECK ---
+window.onload = function(){
+  if(localStorage.getItem("loggedIn") === "true"){
+    document.getElementById("loginOverlay").style.display = 'none';
+    document.getElementById("mainContent").style.display = 'block';
+  }
+};
+
+// --- FIXED LOGIN SCRIPT ---
+function login(){
+  let r = document.getElementById("roll").value.trim().toUpperCase();
+  let p = document.getElementById("pass").value.trim();
+
+  if(r === "GMSBV" && p === "1105001"){
+    localStorage.setItem("loggedIn", "true"); // REMEMBER LOGIN
+    document.getElementById("loginOverlay").style.display = 'none';
+    document.getElementById("mainContent").style.display = 'block';
+  } else {
+    alert("Invalid ID or Password");
+  }
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("PPJZ3d6WZ7PAkVc_m");
+  document.querySelector("#contact form").addEventListener("submit", function(e){
+    e.preventDefault();
+    let userName = this.querySelector('input[type="text"]').value;
+    let userEmail = this.querySelector('input[type="email"]').value;
+    let userMessage = this.querySelector('textarea').value;
+
+    emailjs.send("service_0b7zbaf", "template_qrdhwds", {
+      name: userName,
+      email: userEmail,
+      message: userMessage
+    }).then(() => {
+      alert("Message Sent Successfully!");
+      this.reset();
+    }).catch(() => {
+      alert("Failed to send message. Try again.");
+    });
+  });
+</script>
+</body>
+</html>
